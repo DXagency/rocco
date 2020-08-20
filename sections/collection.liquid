@@ -1,0 +1,358 @@
+{% style %}
+  .main-content {
+  padding-top: 0px;
+  }
+{% endstyle %}
+{% assign tags_title_t = 'collections.tags_title' | t %}
+
+{% assign products_per_row = section.settings.collections-products-per-row | to_number %}
+{% assign products_per_page =  products_per_row | to_number | times: 10 %}
+
+{% paginate collection.products by products_per_page %}
+
+<div
+  class="collection--root"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection"
+>
+
+  <header class="collection--top-row">
+  <div
+    class="featured-content--root"
+    style="{% render 'framework--background-colors', bg_color: section.settings.background-color %} {%if section.settings.background-color == 'pink' %}
+    background: #F8D5D5; {% elsif section.settings.background-color == 'tan' %} background: #E8D8C9; {% endif %}"
+    data-section-id="{{ section.id }}"
+    data-full-width="{{ section.settings.full-width }}"
+    data-dark-background="{{ dark_background }}"
+    data-overlap="{{ section.settings.overlap }}"
+    data-transparent-overlap="{{ section.settings.transparent-overlap }}"
+    data-text-exists="{{ text_exists }}"
+    data-text-position="{{ section.settings.text-position }}"
+    data-alternative-color="{{ section.settings.alternative-color }}"
+    data-text-width="{{ section.settings.text-width }}"
+  >
+    {% if cover_link %}<a href="{{ section.settings.link-url }}">{% endif %}
+    <div class="featured-content--container">
+      <div class="featured-content--image">
+        {% if section.settings.image %}
+          {%
+            render "framework--image",
+            image: section.settings.image,
+            full_width: true
+          %}
+        {% else %}
+          {%
+            render "framework--placeholder",
+            type: "lifestyle",
+            aspect_ratio: 1.45,
+            placeholder_index: 2
+          %}
+        {% endif %}
+      </div>
+
+      {% if
+        section.settings.title != blank or
+        section.settings.description != blank or
+        section.settings.link-text != blank
+      %}
+        <div class="featured-content--text">
+          <div class="featured-content--text-container">
+            {% if section.settings.title != blank %}
+              <h2 class="featured-content--title font--section-heading">
+                {{ section.settings.title | escape }}
+              </h2>
+            {% endif %}
+
+            {% if section.settings.description != blank %}
+              <div class="featured-content--description rte-content font--paragraph">
+                {{ section.settings.description }}
+              </div>
+            {% endif %}
+
+            {% if section.settings.link-text != blank %}
+              <div class="featured-content--link font--block-link">
+                <a href="{{ section.settings.link-url }}">
+                  {{ section.settings.link-text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      </div>
+    {% if cover_link %}</a>{% endif %}
+
+  </div>
+    <div class="left columns large-6">
+      {% if section.settings.collections-breadcrumbs-show %}
+        {% render 'framework--breadcrumbs' %}
+      {% endif %}
+    </div>
+    <div class="right columns large-6">
+      <div class="collection--tag-filter font--accent">
+        {% if collection.all_tags.size > 0 and section.settings.collections-tags-show %}
+
+          <span class="collection--filter-text">{{ tags_title_t }}</span>
+
+          {%- capture available_tags -%}
+            {{- 'collections.tags_show_all' | t -}},
+
+            {%- for tag in collection.all_tags -%}
+              {{- tag -}},
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {% assign available_tags = available_tags | split: "," %}
+
+          {%- capture collection_url -%}
+            {{- routes.collections_url }}/{{ collection.handle -}}
+          {%- endcapture -%}
+
+          {%- capture available_tag_values -%}
+            {{- collection_url -}},
+
+            {%- for tag in collection.all_tags -%}
+              {%- assign tag_handle = tag | handleize -%}
+
+              {%- if current_tags == blank -%}
+                {%- assign current_tag_value = collection_url -%}
+              {%- elsif current_tags contains tag -%}
+                {%- assign current_tag_value = collection_url | append: '/' | append: tag_handle -%}
+              {%- endif -%}
+
+              {{- collection_url }}/{{ tag_handle -}},
+            {%- endfor -%}
+          {%- endcapture -%}
+
+          {% assign available_tag_values = available_tag_values | split: "," %}
+
+          {%
+            render 'framework--disclosure',
+            label_name: tags_title_t,
+            option_names: available_tags,
+            option_values: available_tag_values,
+            current_value: current_tag_value,
+            id: 'collection-filter',
+            type: 'url-redirect'
+          %}
+
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="collection-page--top-divider row">
+    <div class="columns">
+      <div class="divider"></div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    {% if section.settings.show-title or collection.description.size > 0 %}
+      <div class="collection--header">
+        {% if section.settings.show-title %}
+          <h1 class="collection--title font--section-heading">{{ collection.title }}</h1>
+        {% endif %}
+
+        <!-- {% if collection.description.size > 0 %}
+          <article class="collection--description font--paragraph rte-content">
+            {{ collection.description }}
+          </article>
+        {% endif %} -->
+      </div>
+    {% endif %}
+
+    {% if collection.products.size == 0 %}
+      <div class="collection--no-products font--paragraph">
+        <p>{{ 'collections.no_products_feedback' | t }}</p>
+        <a target="_blank" href="/admin/products">
+          {{ 'collections.no_products_link' | t }}
+        </a>
+      </div>
+
+    {% else %}
+      <section class="row">
+        <div
+          class="product-grid--root"
+          data-items-per-row="{{ section.settings.collections-products-per-row }}"
+          data-mobile-items-per-row="{{ section.settings.mobile-items-per-row }}"
+          data-js-class="ProductGrid"
+        >
+          {% comment %} this render tag iterates with 'for' syntax {% endcomment %}
+          {% render 'partial--product' for collection.products as product %}
+        </div>
+      </section>
+
+    {% endif %}
+  </div>
+
+  <div class="row">
+    <div class="columns">
+      <div class="divider bottom-margin"></div>
+    </div>
+  </div>
+
+  <footer class="row collection--bottom-row">
+    <div class="left columns large-6">
+      {% if section.settings.collections-breadcrumbs-show %}
+        {% render 'framework--breadcrumbs' %}
+      {% endif %}
+    </div>
+    <div class="right columns large-6">
+      <div class="collection--pagination">
+        {% render 'framework--pagination', paginate: paginate %}
+      </div>
+    </div>
+
+  </footer>
+
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection",
+  "class": "section--collection",
+  "settings": [
+  {
+    "type": "header",
+    "content": "Layout and Color"
+  },
+  {
+    "id": "full-width",
+    "label": "Full width",
+    "type": "checkbox",
+    "default": false
+  },
+  {
+    "id": "background-color",
+    "label": "Background color",
+    "type": "select",
+    "options": [
+      { "label": "None", "value": "none" },
+      { "label": "Light grey", "value": "light" },
+      { "label": "Dark", "value": "dark" },
+      { "label": "Pink", "value": "pink" },
+      { "label": "Tan", "value": "tan" },
+      { "label": "Accent", "value": "accent" }
+    ],
+    "default": "light"
+  },
+  {
+    "id": "text-position",
+    "label": "Text Position",
+    "type": "select",
+    "options": [
+      { "label": "Top", "value": "top" },
+      { "label": "Bottom", "value": "bottom" },
+      { "label": "Left", "value": "left" },
+      { "label": "Center", "value": "center" },
+      { "label": "Right", "value": "right" }
+    ],
+    "default": "left"
+  },
+  {
+    "id": "text-width",
+    "label": "Text width",
+    "type": "radio",
+    "options": [
+      { "value": "small", "label": "Small"},
+      { "value": "large", "label": "Large"}
+    ],
+    "default": "large"
+  },
+  {
+    "id": "overlap",
+    "label": "Overlap text",
+    "type": "checkbox",
+    "default": true,
+    "info": "Not applicable for centered text"
+  },
+  {
+    "id": "transparent-overlap",
+    "label": "Transparent text background",
+    "type": "checkbox",
+    "default": false
+  },
+  {
+    "id": "alternative-color",
+    "label": "Use alternative text color",
+    "type": "checkbox",
+    "default": false,
+    "info": "This can found under theme settings below."
+  },
+  {
+    "type": "header",
+    "content": "Content"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Heading",
+    "default": "Image with text"
+  },
+  {
+    "type": "richtext",
+    "id": "description",
+    "label": "Text",
+    "default": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store</p>"
+  },
+  {
+    "type": "url",
+    "id": "link-url",
+    "label": "Link"
+  },
+  {
+    "type": "text",
+    "id": "link-text",
+    "label": "Link text"
+  },
+    {
+      "type": "checkbox",
+      "id": "collections-breadcrumbs-show",
+      "label": "Show breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collections-tags-show",
+      "label": "Show tag filter",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show-title",
+      "label": "Show title",
+      "default": false
+    },
+    {
+      "id": "collections-products-per-row",
+      "label": "Products per row",
+      "type": "radio",
+      "options": [
+        { "value": "3", "label": "3"},
+        { "value": "4", "label": "4"}
+      ],
+      "default": "4"
+    },
+    {
+      "id": "mobile-items-per-row",
+      "label": "Products per row for small devices",
+      "type": "radio",
+      "options": [
+        { "value": "1", "label": "1"},
+        { "value": "2", "label": "2"}
+      ],
+      "default": "2"
+    }
+  ]
+}
+{% endschema %}

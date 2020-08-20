@@ -1,0 +1,154 @@
+{% style %}
+.single-column {
+  max-width: none !important;
+}
+
+.featured-content--container {
+  max-width: 100%;
+}
+
+.featured-content--image {
+  width: 50%;
+}
+
+.featured-content--text {
+  padding: 0 !important;
+}
+
+.featured-content--copy {
+  margin: 32px 32px 0px 10px;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .featured-content--container {
+    align-items: center !important;
+  }
+}
+
+{% endstyle %}
+
+<div class="row single-column{% if section.settings.center-content--enabled %} center{% endif %}">
+  <div class="columns">
+    <div class="page-content">
+      <h1 class="page-title font--section-heading">{{ page.about.title }}</h1>
+      <div class="font--paragraph rte-content">
+        {{ page.about.content }}
+      </div>
+      <section class="items">
+
+  {% for block in section.blocks %}
+
+  {% if block.settings.image-on-right == false %}
+
+
+  <div class="featured-content--container about-bg" style="{%if block.settings.about-bg == 'yellow' %}
+  align-items: flex-end; {% endif %}">
+    <div class="featured-content--image">
+      <img src="{{ block.settings.item-image | img_url }}">
+    </div>
+
+      <div class="featured-content--text" style="{%if block.settings.about-bg == 'pink' %}
+      background: #F8D5D5; {% elsif block.settings.about-bg == 'tan' %} background: #E8D8C9; {% elsif block.settings.about-bg == 'yellow' %} background: #F7F4DC; {% endif %}">
+        <div class="featured-content--copy">
+            <h2 class="featured-content--title font--section-heading">
+              {{ block.settings.about-section-title | escape }}
+            </h2>
+
+            <div class="featured-content--description rte-content font--paragraph">
+              {{ block.settings.about-section-copy | escape }}
+            </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="featured-content--container about-bg" style="{%if block.settings.about-bg == 'yellow' %}
+    align-items: flex-end; {% endif %}">
+      <div class="featured-content--image">
+        <img src="{{ block.settings.item-image | img_url }}">
+      </div>
+
+        <div class="featured-content--text" style="{%if block.settings.about-bg == 'pink' %}
+        background: #F8D5D5; {% elsif block.settings.about-bg == 'tan' %} background: #E8D8C9; {% elsif block.settings.about-bg == 'yellow' %} background: #F7F4DC; {% endif %} order: 2 !important;">
+          <div class="featured-content--copy">
+              <h2 class="featured-content--title font--section-heading">
+                {{ block.settings.about-section-title | escape }}
+              </h2>
+
+              <div class="featured-content--description rte-content font--paragraph">
+                {{ block.settings.about-section-copy | escape }}
+              </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    {% endif %}
+
+  {% endfor %}
+
+</section>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+	"name": "About Section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "center-content--enabled",
+      "label": "Center content",
+      "default": true
+    }
+  ],
+	"blocks": [
+    		{
+    			"type": "image",
+    			"name": "about entry",
+    			"settings": [
+                  {
+                    "type": "checkbox",
+                    "id": "image-on-right",
+                    "label": "Image On Right",
+                    "default": false
+                  },
+                  {
+                    "type": "image_picker",
+                    "id": "item-image",
+                    "label": "Image of the product"
+                  },
+                  {
+                    "type": "text",
+                    "id": "about-section-title",
+                    "label": "Section Title",
+                    "default": "Title of this product"
+                  },
+                  {
+                    "type": "textarea",
+                    "id": "about-section-copy",
+                    "label": "Section Copy",
+                    "default": "Copy of section"
+                  },
+                  {
+                    "id": "about-bg",
+                    "label": "Background color",
+                    "type": "select",
+                    "options": [
+                      { "label": "None", "value": "none" },
+                      { "label": "Yellow", "value": "yellow" },
+                      { "label": "Pink", "value": "pink" },
+                      { "label": "Tan", "value": "tan" }
+                    ]
+                  }
+    			]
+    		}
+	]
+}
+{% endschema %}
