@@ -1,5 +1,5 @@
 <h2 class="title font--section-heading">{{ 'products.share_this' | t }}</h2>
-{% capture shareurl %}{{ shop.url }}{{ product.url }}{% endcapture %}
+{% capture shareurl %}{{ shop.url }}{{ product.url }}{% endcapture %} 
 
 {% if share_twitter %}
   <a
@@ -8,7 +8,8 @@
     rel="noreferrer"
   >
     {% render 'framework--icons', icon: 'twitter' %}
-    <span>Tweet</span>
+
+    <span>TWEET</span>
   </a>
 {% endif %}
 
@@ -19,7 +20,8 @@
     rel="noreferrer"
   >
     {% render 'framework--icons', icon: 'facebook' %}
-    <span>Like</span>
+
+    <span>LIKE</span>
   </a>
 {% endif %}
 
@@ -31,6 +33,7 @@
     rel="noreferrer"
   >
     {% render 'framework--icons', icon: 'pinterest' %}
-    <span>Pin</span>
+
+    <span>PIN</span>
   </a>
 {% endif %}

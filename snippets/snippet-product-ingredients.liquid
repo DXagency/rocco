@@ -1,0 +1,75 @@
+<div>
+	<h2 class="ingredients--title title font--section-heading">What’s Inside?</h2>
+	<div class="ingredients--list">
+		{% assign separator = "|###|" %} {% assign image_array =
+		product.metafields.custom_fields["image"] | split: separator %} {% assign
+		name_array = product.metafields.custom_fields["name"] | split: separator %}
+		{% assign description_array =
+		product.metafields.custom_fields["description"] | split: separator %} {%
+		assign fc_keys = product.metafields.custom_fields["ingredients"] | split:
+		"," %} {% for i in fc_keys %} {% assign index = i | plus: 0 %}
+		<div class="ingredients--item  fingredients--item--{{ index }}">
+			<img src="{{ 'plus-sign.png' | asset_url }}" alt="Plus" />
+			<div class="field__image">
+				{{ image_array[index] }}
+			</div>
+			<div class="field__name">
+				<h3>
+					{{ name_array[index] }}
+				</h3>
+			</div>
+			<div class="field__description">
+				{{ description_array[index] }}
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+<style>
+	.product-page--ingredients {
+		padding: 50px 0;
+	}
+	.product-page--ingredients .ingredients--title {
+		text-align: center;
+		margin: 25px 0;
+	}
+	.product-page--ingredients .ingredients--list {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.product-page--ingredients .ingredients--item {
+		width: 20%;
+		margin: 25px;
+	}
+	@media only screen and (max-width: 767px) {
+		.product-page--ingredients .ingredients--item {
+			width: 36%;
+		}
+	}
+	.product-page--ingredients .ingredients--item img {
+		display: block;
+		margin: 0 auto;
+	}
+	.product-page--ingredients .ingredients--item .field__image img {
+		width: 100%;
+		max-width: 250px;
+	}
+	.product-page--ingredients .ingredients--item .field__name {
+		text-align: center;
+		padding: 15px 0;
+		margin-bottom: 15px;
+		border-bottom: 1px solid #a2a2a2;
+	}
+	.yotpo-main-widget {
+		max-width: 1200px;
+	}
+	.yotpo .promoted-products-box .yotpo-main-title {
+		color: #000;
+	}
+</style>

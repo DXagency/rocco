@@ -1,7 +1,11 @@
 {
   "current": {
     "color--accent": "#fff8d9",
+<<<<<<< HEAD
     "color-text": "#444444",
+=======
+    "color-text": "#000000",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
     "color--alternative": "#ffffff",
     "color-page-bg": "#ffffff",
     "color-panel-bg": "#f7f7f7",
@@ -10,6 +14,7 @@
     "color-button": "#ffffff",
     "color-button-bg": "#444444",
     "color-header-bg": "#f7f7f7",
+<<<<<<< HEAD
     "color-header": "#444444",
     "color-header-cart": "#444444",
     "bg-color--footer": "#f7f7f7",
@@ -18,17 +23,35 @@
     "color-slider-caption-bg": "#ffffff",
     "color-slider-button": "#f7f7f7",
     "color-slider-button-bg": "#444444",
+=======
+    "color-header": "#000000",
+    "color-header-cart": "#444444",
+    "bg-color--footer": "#f7f7f7",
+    "color--footer": "#333333",
+    "color-slider-caption": "#000000",
+    "color-slider-caption-bg": "#ffffff",
+    "color-slider-button": "#f7f7f7",
+    "color-slider-button-bg": "#000000",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
     "color-slider-nav": "#444444",
     "color-grid-sale": "#ffffff",
     "color-grid-sale-bg": "#444444",
     "color-grid-sold-out": "#ffffff",
     "color-grid-sold-out-bg": "#cccccc",
     "color-tabs-accordions": "#ebebeb",
+<<<<<<< HEAD
     "typography--heading": "futura_n4",
     "typography--heading--uppercase": false,
     "typography--heading--size": "medium",
     "typography--accent": "karla_n4",
     "typography--paragraph": "karla_n4",
+=======
+    "typography--heading": "chivo_n9",
+    "typography--heading--uppercase": false,
+    "typography--heading--size": "medium",
+    "typography--accent": "chivo_n4",
+    "typography--paragraph": "chivo_n4",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
     "typography--paragraph--size": "medium",
     "hover-image-enabled": true,
     "brand-show": false,
@@ -86,7 +109,11 @@
         "settings": {
           "transparent-menu": false,
           "header-account-show": true,
+<<<<<<< HEAD
           "cart--icon": "text",
+=======
+          "cart--icon": "cart",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "header-menu-center": false,
           "menu": "rds-1-0-header",
           "show-currency-selector": false,
@@ -112,6 +139,10 @@
           "product-size-chart-enabled": false,
           "product-size-chart-option": "size",
           "product-size-chart-page-content": "",
+<<<<<<< HEAD
+=======
+          "product-ingredients": false,
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "product-share-this-show": true,
           "product-share-twitter": true,
           "product-share-facebook": true,
@@ -121,6 +152,21 @@
       "collection": {
         "type": "collection",
         "settings": {
+<<<<<<< HEAD
+=======
+          "full-width": true,
+          "background-color": "light",
+          "text-position": "center",
+          "text-width": "small",
+          "overlap": true,
+          "transparent-overlap": false,
+          "alternative-color": false,
+          "image": "shopify:\/\/shop_images\/top_img6-collections_2x_72ac2a81-d987-42a3-8e44-197a2681cdb0.png",
+          "title": "",
+          "description": "<p><strong>The full ROCCO collection, containing shakes, protein powders, bars, and more.<\/strong><\/p>",
+          "link-url": "",
+          "link-text": "",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "collections-breadcrumbs-show": true,
           "collections-tags-show": true,
           "show-title": false,
@@ -128,6 +174,7 @@
           "mobile-items-per-row": "2"
         }
       },
+<<<<<<< HEAD
       "1519177052247": {
         "type": "slideshow",
         "blocks": {
@@ -154,17 +201,27 @@
           "rotate-frequency-range": 7
         }
       },
+=======
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
       "1519177108222": {
         "type": "framework--featured-content",
         "settings": {
           "full-width": false,
+<<<<<<< HEAD
           "background-color": "light",
+=======
+          "background-color": "tan",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "text-position": "center",
           "text-width": "large",
           "overlap": false,
           "transparent-overlap": false,
           "alternative-color": false,
+<<<<<<< HEAD
           "image": "shopify:\/\/shop_images\/Chef_Crafted_Superfoods_Banner_2.jpg",
+=======
+          "image": "shopify:\/\/shop_images\/INGREDIENTS_2x_683e78c0-c76e-4ce6-ae72-4a704a9ef24c.png",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "title": "We have super powers.",
           "description": "<p>We have crafted the only superfood raw organic supplements low in fats, carbs, and sugars - yet high in protein and fiber.<\/p>",
           "link-url": "shopify:\/\/pages\/ingredients",
@@ -174,6 +231,7 @@
       "1519177136360": {
         "type": "framework--featured-grid",
         "blocks": {
+<<<<<<< HEAD
           "1519177136360-0": {
             "type": "image",
             "settings": {
@@ -189,6 +247,23 @@
               "image": "shopify:\/\/shop_images\/BANNER_IMAGES_ROCCO-2_fa631485-82fd-4590-bb4d-4c10e67f4e33.jpg",
               "title": "Bars",
               "link-url": "shopify:\/\/collections\/bars",
+=======
+          "1519177136360-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BANNER_IMAGES_ROCCO-2_fa631485-82fd-4590-bb4d-4c10e67f4e33.jpg",
+              "title": "Bars",
+              "link-url": "shopify:\/\/collections\/bars",
+              "link-text": "SHOP NOW"
+            }
+          },
+          "1595273995543": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BANNER-IMAGES-ROCCO-9-square-no-branding.jpg",
+              "title": "Shakes",
+              "link-url": "shopify:\/\/collections\/shakes",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
               "link-text": "SHOP NOW"
             }
           },
@@ -201,12 +276,21 @@
               "link-text": "SHOP NOW"
             }
           },
+<<<<<<< HEAD
           "1595273995543": {
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/BANNER-IMAGES-ROCCO-9-square-no-branding.jpg",
               "title": "Shakes",
               "link-url": "shopify:\/\/collections\/shakes",
+=======
+          "1519177136360-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Find_your_next_obsession.jpg",
+              "title": "Everything Else",
+              "link-url": "shopify:\/\/collections\/everything-else",
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
               "link-text": "SHOP NOW"
             }
           }
@@ -231,6 +315,7 @@
           "link-text": ""
         }
       },
+<<<<<<< HEAD
       "1519177181912": {
         "type": "featured-collection",
         "settings": {
@@ -284,6 +369,12 @@
         "type": "announcement",
         "settings": {
           "enabled": true,
+=======
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "enabled": false,
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "home-page-only": true,
           "background-color": "dark",
           "alternative-color": true,
@@ -298,25 +389,98 @@
           "1595275445015": {
             "type": "menu",
             "settings": {
+<<<<<<< HEAD
               "menu-title": "",
               "menu": ""
+=======
+              "menu-title": "Shop",
+              "menu": "shop"
+            }
+          },
+          "1597127270703": {
+            "type": "menu",
+            "settings": {
+              "menu-title": "Learn",
+              "menu": "learn"
+            }
+          },
+          "1597127296857": {
+            "type": "menu",
+            "settings": {
+              "menu-title": "Connect with Us",
+              "menu": "connect-with-us"
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
             }
           }
         },
         "block_order": [
+<<<<<<< HEAD
           "1595275445015"
+=======
+          "1595275445015",
+          "1597127270703",
+          "1597127296857"
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
         ],
         "settings": {
           "show-currency-selector": false,
           "show-locale-selector": false,
+<<<<<<< HEAD
           "show-payment-icons": true
         }
       },
       "1595274979461": {
+=======
+          "show-payment-icons": false
+        }
+      },
+      "pages": {
+        "type": "pages",
+        "settings": {
+          "center-content--enabled": true
+        }
+      },
+      "1597180702790": {
+        "type": "slideshow",
+        "blocks": {
+          "1597180702790-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/top_img_2x_d77857c7-9628-4eb2-9152-3878676ec0b8.png",
+              "slide-title": "Chef-crafted, simple, honest, superfood supplements.",
+              "slide-tagline": "",
+              "slide-link-url": "shopify:\/\/collections\/everything-else",
+              "slide-link-title": "Shop all products",
+              "slide-y-pos": "middle",
+              "slide-x-pos": "left",
+              "slide-text-pos": "text-left"
+            }
+          }
+        },
+        "block_order": [
+          "1597180702790-0"
+        ],
+        "settings": {
+          "autoplay": true,
+          "transition_style": "default",
+          "rotate-frequency-range": 7
+        }
+      },
+      "1597181084635": {
+        "type": "featured-collection",
+        "settings": {
+          "background-color": "none",
+          "home-product-slider-collection": "best-sellers",
+          "max_products": 8
+        }
+      },
+      "1597181187310": {
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
         "type": "framework--featured-product",
         "settings": {
           "background-color": "none",
           "smart_payment_button": true,
+<<<<<<< HEAD
           "heading": "Featured Product",
           "featured_product": "montys-x-rocco-the-essentials",
           "show_vendor": false,
@@ -334,10 +498,81 @@
           "text-width": "large",
           "overlap": true,
           "transparent-overlap": false,
+=======
+          "heading": "FEATURED PRODUCT",
+          "featured_product": "rocco-nut-seed-bread-gluten-feee-vegan",
+          "show_vendor": false,
+          "variant-style": "dropdowns",
+          "swatches-enabled": true,
+          "loop_enabled": false
+        }
+      },
+      "1597181379573": {
+        "type": "framework--featured-content",
+        "settings": {
+          "full-width": true,
+          "background-color": "pink",
+          "text-position": "left",
+          "text-width": "large",
+          "overlap": true,
+          "transparent-overlap": true,
+          "alternative-color": false,
+          "image": "shopify:\/\/shop_images\/rocco-bg_1.png",
+          "title": "Carefully Crafted And Selected By Top Chef Rocco DiSpirito",
+          "description": "",
+          "link-url": "shopify:\/\/pages\/about",
+          "link-text": "OUR MISSION"
+        }
+      },
+      "1597181714148": {
+        "type": "framework--newsletter",
+        "settings": {
+          "background-color": "none",
+          "heading": "Sign Up To Get 10% Off Your First Order!",
+          "newsletter--subheading": "<p>You&rsquo;ll learn about the latest and greatest ROCCO products and get a special first order discount. It&rsquo;s a win-win!<\/p>"
+        }
+      },
+      "1597182382046": {
+        "type": "slideshow",
+        "blocks": {
+          "1597182382046-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Group_107_2x_86ff929e-17c7-4bbc-aafc-3a5665324c36.png",
+              "slide-title": "",
+              "slide-tagline": "",
+              "slide-link-url": "",
+              "slide-link-title": "",
+              "slide-y-pos": "middle",
+              "slide-x-pos": "center",
+              "slide-text-pos": "text-left"
+            }
+          }
+        },
+        "block_order": [
+          "1597182382046-0"
+        ],
+        "settings": {
+          "autoplay": true,
+          "transition_style": "default",
+          "rotate-frequency-range": 7
+        }
+      },
+      "1597182588466": {
+        "type": "framework--featured-content",
+        "settings": {
+          "full-width": true,
+          "background-color": "yellow",
+          "text-position": "right",
+          "text-width": "large",
+          "overlap": false,
+          "transparent-overlap": true,
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
           "alternative-color": false,
           "image": "shopify:\/\/shop_images\/2020-07-20_15-58-08.jpg",
           "title": "Follow ROCCO",
           "description": "<p>Follow us on instagram for daily news, recipes, store updates and #foodspiration<\/p>",
+<<<<<<< HEAD
           "link-url": "https:\/\/www.instagram.com\/roccodispirito",
           "link-text": "FOLLOW @ROCCODISPIRITO"
         }
@@ -353,6 +588,66 @@
       "1521155972652",
       "1519177316120",
       "1595275100362"
+=======
+          "link-url": "https:\/\/www.instagram.com\/roccodispirito\/?hl=en",
+          "link-text": "FOLLOW @ROCCODISPIRITO"
+        }
+      },
+      "about2": {
+        "type": "about2",
+        "blocks": {
+          "1597828337884": {
+            "type": "image",
+            "settings": {
+              "image-on-right": false,
+              "item-image": "shopify:\/\/shop_images\/About1_2x_b9f7e3f1-674c-4f35-b9b3-6780d5e9fe0a.png",
+              "about-section-title": "Because healthy and delicious shouldn’t be mutually exclusive.",
+              "about-section-copy": "We also believe eating healthy shouldn’t be a sacrifice, and shouldn’t be a strain on your wallet - so we created a line of organic superfood supplements and snacks that are not only some of the healthiest on the market, but are as nutritionally-dense as they come, while tasting great.",
+              "about-bg": "tan"
+            }
+          },
+          "1597835185993": {
+            "type": "image",
+            "settings": {
+              "image-on-right": true,
+              "item-image": "shopify:\/\/shop_images\/Mask_Group_2_2x_96345c8f-973b-4463-b267-adba8b36f525.png",
+              "about-section-title": "Our products are high in protein and fiber while being low in fats, carbs, and sugars - and use only natural, vegan, and organic ingredients throughout.",
+              "about-section-copy": "",
+              "about-bg": "pink"
+            }
+          },
+          "1597835381858": {
+            "type": "image",
+            "settings": {
+              "image-on-right": false,
+              "item-image": "shopify:\/\/shop_images\/Mask_Group_3_2x_d4830800-4a4b-4db4-8ec1-67b3c20d81c2.png",
+              "about-section-title": "Chef-Crafted",
+              "about-section-copy": "Rocco DiSpirito is a healthy lifestyle crusader, James Beard award-winning chef, and highly acclaimed author of thirteen books, including five New York Times bestsellers. He is recognized for his inspiring weight loss journey and has dedicated his life to proving that healthy and delicious are not mutually exclusive. \n\nHe is hailed as an inspiring health expert and is often called upon to speak at events, such as the Partnership for a Healthier America summit in Washington, D.C. DiSpirito’s love of food began at a young age, learning from Mama who could make magnificent dishes using only a handful of real foods. His passion for cooking led him to study at the Culinary Institute of America and Boston University. By the time he turned 20 years old, he was working in the kitchens of legendary chefs around the globe. His 3-Star restaurant Union Pacific was a New York City culinary landmark for many years.  He lives in New York City and enjoys bicycling and participating in triathlons.",
+              "about-bg": "yellow"
+            }
+          }
+        },
+        "block_order": [
+          "1597828337884",
+          "1597835185993",
+          "1597835381858"
+        ],
+        "settings": {
+          "center-content--enabled": true
+        }
+      }
+    },
+    "content_for_index": [
+      "1597180702790",
+      "1597181084635",
+      "1519177108222",
+      "1597181187310",
+      "1597181379573",
+      "1597181714148",
+      "1519177136360",
+      "1597182382046",
+      "1597182588466"
+>>>>>>> d9954322d85a96822ac4ea5f22ec719714dc6495
     ]
   },
   "presets": {
